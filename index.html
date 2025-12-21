@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vũ Ngọc Phiêu | Bio</title>
+  <meta charset="UTF-8">
+  <title>Vũ Ngọc Phiêu | GOD MODE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="avatar.jpg">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 
 <body>
-  <canvas id="particles"></canvas>
 
-  <div class="card">
-    <div class="avatar">
-      <img src="https://avatars.githubusercontent.com/u/yourid" alt="avatar">
-    </div>
+<canvas id="particles"></canvas>
 
-    <h1>Vũ Ngọc Phiêu</h1>
-    <span class="role">Web Developer • AI • Gamer</span>
+<div class="card" id="card">
 
-    <p>
-      Đam mê công nghệ, lập trình web & AI<br>
-      Luôn học hỏi – Luôn nâng cấp bản thân 🚀
-    </p>
-
-    <div class="social">
-      <a href="https://facebook.com/ngocphieu2106" target="_blank">🌐</a>
-      <a href="https://github.com/vungocphieu" target="_blank">🐱</a>
-      <a href="https://www.linkedin.com/in/vungocphieu21/" target="_blank">💼</a>
-      <a href="https://www.tiktok.com/@ngocphieu21" target="_blank">🎵</a>
-    </div>
-
-    <button id="musicBtn">🔊 Bật nhạc</button>
+  <div class="avatar">
+    <img src="./media/avatar.jpg" alt="Vu Ngoc Phieu">
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="./media/music.mp3" type="audio/mpeg">
-  </audio>
+  <h1 id="typing"></h1>
+  <span class="role">Web Developer • AI • Gamer</span>
+
+  <p id="desc">
+    Đam mê công nghệ & sáng tạo 🚀<br>
+    Luôn học hỏi – Luôn nâng cấp bản thân
+  </p>
+
+  <div class="skills">
+    <div><span>HTML / CSS</span><div class="bar html"></div></div>
+    <div><span>JavaScript</span><div class="bar js"></div></div>
+    <div><span>AI / Python</span><div class="bar ai"></div></div>
+  </div>
+
+  <div class="social">
+    <a href="https://facebook.com/ngocphieu2106" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://github.com/vungocphieu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/vungocphieu21/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://tiktok.com/@lieucute21" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+
+  <div class="actions">
+    <button id="musicBtn"><i class="fa fa-music"></i></button>
+    <button id="themeBtn"><i class="fa fa-moon"></i></button>
+    <button id="langBtn">EN</button>
+  </div>
+
+</div>
+
+<div class="fps" id="fps">FPS: 0</div>
+
+<audio id="bgMusic" loop src="./media/music.mp3"></audio>
+<audio id="hoverSound" src="./media/hover.mp3"></audio>
+<audio id="clickSound" src="./media/click.mp3"></audio>
+
 </body>
 </html>
