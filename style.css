@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
@@ -14,6 +14,8 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+  user-select: none;
+  overflow: hidden;
 }
 
 @keyframes bgMove {
@@ -21,21 +23,30 @@ body {
   100% { background-position: right; }
 }
 
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  background: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 20px #ffd700;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
 .card {
   width: 340px;
   padding: 30px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(15px);
-  box-shadow: 0 0 30px rgba(255,215,0,0.6);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
   text-align: center;
-  animation: float 3s ease-in-out infinite;
+  transition: transform 0.1s;
 }
 
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
 .avatar {
   width: 120px;
@@ -43,7 +54,9 @@ body {
   border-radius: 50%;
   border: 4px solid #ffd700;
   margin-bottom: 15px;
+  box-shadow: 0 0 15px #ffd700;
 }
+
 
 h1 {
   color: #ffd700;
@@ -51,8 +64,8 @@ h1 {
 }
 
 .job {
-  color: #ccc;
   font-size: 14px;
+  color: #ddd;
   margin-bottom: 15px;
 }
 
@@ -62,6 +75,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Social */
 .social a {
   color: white;
   font-size: 20px;
@@ -72,21 +86,27 @@ h1 {
 .social a:hover {
   color: #ffd700;
   text-shadow: 0 0 10px #ffd700;
-  transform: scale(1.3);
+  animation: shake 0.3s;
 }
 
+@keyframes shake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Music button */
 .music-btn {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
   font-size: 18px;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 50%;
   cursor: pointer;
-}
-.music-btn:hover {
-  background: rgba(255,255,255,0.4);
+  z-index: 1000;
 }
