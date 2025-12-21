@@ -48,7 +48,7 @@ document.addEventListener("mousemove", e => {
   card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
 
-/* PARTICLES */
+
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
@@ -91,7 +91,6 @@ function fps(now) {
 }
 fps();
 
-/* KONAMI CODE – GOD EFFECT */
 const code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
 let pos = 0;
 document.addEventListener("keydown", e => {
