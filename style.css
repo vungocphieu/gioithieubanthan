@@ -1,153 +1,119 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif}
+
+body{
+  height:100vh;
+  background:radial-gradient(circle at top,#0f2027,#000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:#fff;
 }
 
-body {
-  height: 100vh;
-  background: radial-gradient(circle at top, #0f2027, #000);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  color: #fff;
+canvas{position:fixed;inset:0;z-index:0}
+
+.cursor-glow{
+  position:fixed;
+  width:300px;
+  height:300px;
+  background:radial-gradient(circle,rgba(0,255,255,.15),transparent 60%);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:1;
 }
 
-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+.card{
+  width:380px;
+  padding:28px;
+  border-radius:26px;
+  background:rgba(15,25,30,.92);
+  backdrop-filter:blur(14px);
+  text-align:center;
+  z-index:2;
+  box-shadow:0 0 60px rgba(0,255,255,.35);
 }
 
-.card {
-  width: 360px;
-  padding: 34px 26px;
-  border-radius: 26px;
-  background: rgba(15, 25, 30, 0.9);
-  backdrop-filter: blur(14px);
-  text-align: center;
-  z-index: 2;
-  box-shadow:
-    0 0 40px rgba(0,255,255,.4),
-    0 0 120px rgba(255,215,0,.25);
-  transition: transform .15s ease;
+.avatar{
+  width:120px;height:120px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  padding:4px;
+  background:linear-gradient(45deg,cyan,gold)
+}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+
+h1{font-size:26px;min-height:34px}
+.role{font-size:13px;color:#ffd700;margin-bottom:10px;display:block}
+
+p{font-size:14px;line-height:1.6;margin-bottom:14px}
+
+.chatbox{
+  background:#111;
+  border-radius:12px;
+  padding:10px;
+  margin-bottom:14px;
+}
+.chatlog{
+  max-height:120px;
+  overflow-y:auto;
+  font-size:13px;
+  text-align:left;
+}
+.bot{color:#00ffff;margin-bottom:6px}
+.user{color:#ffd700;margin-bottom:6px}
+
+.chatbox input{
+  width:100%;
+  margin-top:6px;
+  padding:6px;
+  border:none;
+  border-radius:8px;
+  outline:none;
 }
 
-.avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  padding: 4px;
-  background: linear-gradient(45deg, gold, cyan);
+.github{
+  width:100%;
+  margin:10px 0;
 }
 
-.avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+iframe{
+  width:100%;
+  border-radius:12px;
+  border:none;
+  margin-bottom:10px;
 }
 
-h1 {
-  font-size: 26px;
-  min-height: 34px;
+.social{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-bottom:10px;
+}
+.social a{font-size:22px;color:white}
+.social a:hover{color:gold}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+.actions button{
+  width:42px;height:42px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(45deg,cyan,gold)
 }
 
-.role {
-  display: block;
-  font-size: 14px;
-  color: #ffd700;
-  margin-bottom: 12px;
+.fps{
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  font-size:12px;
+  opacity:.6;
 }
 
-p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.skills {
-  text-align: left;
-  margin-bottom: 16px;
-}
-
-.skills div {
-  margin-bottom: 8px;
-}
-
-.skills span {
-  font-size: 12px;
-}
-
-.bar {
-  height: 6px;
-  border-radius: 6px;
-  background: #333;
-  overflow: hidden;
-}
-
-.bar::after {
-  content: "";
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, cyan, gold);
-  animation: load 2s forwards;
-}
-
-.html::after { width: 90%; }
-.js::after   { width: 80%; }
-.ai::after   { width: 70%; }
-
-@keyframes load {
-  from { width: 0; }
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 16px;
-}
-
-.social a {
-  font-size: 22px;
-  color: #fff;
-  transition: transform .3s, color .3s;
-}
-
-.social a:hover {
-  transform: scale(1.4);
-  color: gold;
-}
-
-.actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.actions button {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(45deg, cyan, gold);
-  font-size: 16px;
-}
-
-.fps {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  font-size: 12px;
-  opacity: .6;
-}
-
-body.light {
-  background: radial-gradient(circle, #f5f5f5, #ccc);
-  color: #111;
+body.light{
+  background:radial-gradient(circle,#f5f5f5,#ccc);
+  color:#111;
 }

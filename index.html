@@ -2,12 +2,13 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Vũ Ngọc Phiêu - Portfolio</title>
+  <title>Vũ Ngọc Phiêu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" href="avatar.jpg">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -15,40 +16,47 @@
 <body>
 
 <canvas id="particles"></canvas>
+<div class="cursor-glow" id="glow"></div>
 
 <div class="card" id="card">
 
   <div class="avatar">
-    <img src="./media/avatar.jpg" alt="Vu Ngoc Phieu">
+    <img src="./media/avatar.jpg" alt="Vũ Ngọc Phiêu">
   </div>
 
   <h1 id="typing"></h1>
-  <span class="role">Web Developer • AI • Gamer</span>
+  <span class="role">Fullstack Dev • AI • Creative Tech</span>
 
   <p id="desc">
-    Đam mê công nghệ & sáng tạo 🚀<br>
-    Luôn học hỏi – Luôn nâng cấp bản thân
+    Xây dựng sản phẩm có chiều sâu.<br>
+    Code không chỉ chạy — mà phải có linh hồn.
   </p>
 
-  <div class="skills">
-    <div><span>HTML / CSS</span><div class="bar html"></div></div>
-    <div><span>JavaScript</span><div class="bar js"></div></div>
-    <div><span>AI / Python</span><div class="bar ai"></div></div>
-    <div><span>PHP / MySQL</span><div class="bar php"></div></div>
-    <div><span>React / Node.js</span><div class="bar react"></div></div>
+  <!-- AI MINI CHAT -->
+  <div class="chatbox">
+    <div class="chatlog" id="chatlog">
+      <div class="bot">👁️ Xin chào, bạn muốn biết gì về tôi?</div>
+    </div>
+    <input id="chatInput" placeholder="Hỏi về skills, dự án, liên hệ..." />
   </div>
+  <img class="github"
+    src="https://github-readme-stats.vercel.app/api?username=vungocphieu&show_icons=true&theme=tokyonight">
+  <iframe
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX9Z3vMB2b8im"
+    height="80"
+    allow="encrypted-media">
+  </iframe>
 
   <div class="social">
-    <a href="https://facebook.com/ngocphieu2106" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://github.com/vungocphieu" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/vungocphieu21/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://linkedin.com/in/vungocphieu21" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://facebook.com/ngocphieu2106" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://tiktok.com/@lieucute21" target="_blank"><i class="fab fa-tiktok"></i></a>
   </div>
 
   <div class="actions">
     <button id="musicBtn"><i class="fa fa-music"></i></button>
     <button id="themeBtn"><i class="fa fa-moon"></i></button>
-    <button id="langBtn">EN</button>
   </div>
 
 </div>
