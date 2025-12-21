@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Giới thiệu bản thân | Vũ Ngọc Phiêu</title>
-
-  <link rel="icon" href="media/icon.png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Vũ Ngọc Phiêu | Bio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Nhạc nền -->
+  <audio id="bgMusic" loop>
+    <source src="media/bg-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" id="musicBtn">
+    <i class="fas fa-music"></i>
+  </button>
+
   <div class="card">
-    <div class="card__img">
-      <img src="media/hinhnen.jpg" alt="Ảnh đại diện">
-    </div>
+    <img src="media/avatar.jpg" class="avatar">
 
-    <h2>Vũ Ngọc Phiêu</h2>
-    <p class="job">Web Developer | Gamer 🎮</p>
+    <h1 id="typing"></h1>
+    <p class="job">Web Developer • AI • Gamer</p>
 
-    <p class="bio">
-      Xin chào 👋<br>
-      Mình là Phiêu, yêu thích lập trình web, AI và công nghệ.
+    <p class="desc">
+      Đam mê công nghệ, lập trình web & AI.<br>
+      Luôn học hỏi – Luôn nâng cấp bản thân 🚀
     </p>
 
-    <div class="card__social">
-      <a href="https://www.facebook.com/ngocphieu2106" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.youtube.com/@ace6t9gaming80" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@lieucute21" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <div class="social">
+      <a href="https://facebook.com/ngocphieu2106" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://github.com/vungocphieu" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.messenger.com/" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+      <a href="https://youtube.com/@ace6t9gaming80" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://tiktok.com/@lieucute21" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
-
-    <button id="contactBtn">Contact me</button>
   </div>
 
   <script src="script.js"></script>
