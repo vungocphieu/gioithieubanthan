@@ -1,76 +1,49 @@
-const text = "Vũ Ngọc Phiêu";
-let index = 0;
-const typing = document.getElementById("typing");
-
-function typeText() {
-  if (index < text.length) {
-    typing.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeText, 120);
-  }
-}
-typeText();
-
-
+// MUSIC
 const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-let musicStarted = false;
+const btn = document.getElementById("musicBtn");
 
-document.addEventListener("click", () => {
-  if (!musicStarted) {
-    music.volume = 0;
-    music.play();
-    fadeInMusic();
-    musicStarted = true;
-    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-  }
-}, { once: true });
-
-function fadeInMusic() {
-  let vol = 0;
-  const fade = setInterval(() => {
-    if (vol < 0.6) {
-      vol += 0.02;
-      music.volume = vol;
-    } else {
-      clearInterval(fade);
-    }
-  }, 200);
-}
-
-
-musicBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
+btn.onclick = () => {
   if (music.paused) {
     music.play();
-    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    btn.textContent = "🔇 Tắt nhạc";
   } else {
     music.pause();
-    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+    btn.textContent = "🔊 Bật nhạc";
   }
-});
+};
 
+// PARTICLES
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
 
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
+let particles = Array.from({ length: 80 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 2 + 1,
+  dx: (Math.random() - 0.5) * 0.5,
+  dy: (Math.random() - 0.5) * 0.5
+}));
 
-const card = document.querySelector(".card");
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(255,255,255,.7)";
 
-document.addEventListener("mousemove", e => {
-  const x = (window.innerWidth / 2 - e.clientX) / 25;
-  const y = (window.innerHeight / 2 - e.clientY) / 25;
+  particles.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
 
-  card.style.transform = `
-    rotateY(${x}deg)
-    rotateX(${y}deg)
-    translateY(-10px)
-  `;
-});
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
 
-document.addEventListener("mouseleave", () => {
-  card.style.transform = "rotateX(0) rotateY(0)";
-});
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
